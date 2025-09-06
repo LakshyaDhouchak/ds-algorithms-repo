@@ -56,7 +56,7 @@ public class StaticArrays {
      * Inside this methord i have created a feature if key element present in an array then it will
      * return the index value where it present. if not then it will return -1.
      */
-    public int Search(int key){
+    public int search(int key){
         int pointer = -1;
         // define the for-loop
         for(int i = 0;i<=index;i++){
@@ -99,20 +99,25 @@ public class StaticArrays {
             System.out.println("SORRY!! Array overflow condition");
         }
         else{
-            if(index1>=index+1 && index1<=size-1){
+            if(index1==index+1 && index1<=size-1){
                 arr[index1] = data;
                 index = index1;
+                System.out.println("Congratulation !! Element is inserted Successfully");
             }
-            else{
+            else if(index1<=index&& index1>=0){
                 // define the for loop
                 for(int i = index;i>=index1;i--){
                     arr[i+1] = arr[i];
                 }
                 arr[index1] = data;
                 index++;
+                System.out.println("Congratulation !! Element is inserted Successfully");
+            }
+            else{
+                System.out.println("SORRY !! Invalid index");
             }
         }
-        System.out.println("Congratulation !! Element is inserted Successfully");
+        
     }
 
     // define the delete() methord
@@ -127,7 +132,7 @@ public class StaticArrays {
     public void delete(int index1){
         // define the condition
         if(index != -1){
-            if(index1 > index){
+            if(index1 > index || index1<0){
                 System.out.println("SORRY !! Index Out of bounds");
             }
             else{
