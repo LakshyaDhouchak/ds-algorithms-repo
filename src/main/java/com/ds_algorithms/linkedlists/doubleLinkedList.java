@@ -21,8 +21,8 @@ public class doubleLinkedList {
     static class Node{
         // define the properties
         int data;
-        node prev;
-        node next;
+        Node prev;
+        Node next;
 
         // define the constructor
         public Node(int data){
