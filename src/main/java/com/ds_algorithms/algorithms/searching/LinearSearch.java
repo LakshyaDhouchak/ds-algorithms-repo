@@ -21,7 +21,7 @@ public class LinearSearch {
     /*
      * Inside this methord i have created a feature where we search the given key weather present
      * or not.
-     * NOTE: Not recommended for non-contigious memory allocation
+     * NOTE: Not recommended for contigious memory allocation
      */
     public int search(int[] arr,int key){
         // define the base condition
