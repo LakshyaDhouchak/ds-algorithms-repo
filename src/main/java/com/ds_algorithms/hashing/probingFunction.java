@@ -14,7 +14,7 @@ package com.ds_algorithms.hashing;
  *   - Double Hashing → (hash1 + i * hash2) % size
  * 
  */
-public interface probingFunction {
+public interface ProbingFunction {
     // define the methord
     int probe(int hash ,int i ,int size ,int key);
 } 
@@ -26,7 +26,7 @@ public interface probingFunction {
  * process continue until no empty space we get. if i == size-1 and no space we get
  * then hashtable is alredy full.
  */
-class LinearProbing implements probingFunction{
+class LinearProbing implements ProbingFunction{
     @Override
     public int probe(int hash ,int i ,int size ,int key){
         return (hash + i)%size;
@@ -39,7 +39,7 @@ class LinearProbing implements probingFunction{
  * process continue until no empty space we get. if i == size-1 and no space we get
  * then hashtable is alredy full.
  */
-class QuadreaticProbing implements probingFunction{
+class QuadreaticProbing implements ProbingFunction{
     @Override
     public int probe(int hash ,int i ,int size ,int key){
         return (hash+ i*i)%size;
@@ -47,7 +47,7 @@ class QuadreaticProbing implements probingFunction{
 }
 
 // define the DoubleProbing() methord
-class DoubleProbing implements probingFunction{
+class DoubleProbing implements ProbingFunction{
     // define the properties
     private final HashFunction secondHashFunction;
 
