@@ -3,7 +3,7 @@ package com.ds_algorithms.hashing;
 public class probingFxnMenu {
     
     // define the methord
-    public probingFunction getProbingFunction(int choice1,int choice2, int tableSize){
+    public ProbingFunction getProbingFunction(int choice1,int choice2, int tableSize){
         // define the switch case
         switch(choice1){
             case 1:
