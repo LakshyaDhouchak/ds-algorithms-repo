@@ -49,10 +49,10 @@ public class Prims {
             public int compare(Pair a, Pair b){
                 return a.weight-b.weight;
             }
-        })
+        });
 
         boolean[] visited = new boolean[numVertex];
-        pQueue.add(start,0);
+        pQueue.add(new Pair(start,0));
         int minCost = 0;
 
         //define the while loop
@@ -67,7 +67,7 @@ public class Prims {
             visited[u] = true;
             minCost += v;
 
-            for(int neighbor: adjList.get(u)){
+            for(Pair neighbor: adjList.get(u)){
                 // define the condition
                 if (!visited[neighbor.edges]) {
                     pQueue.add(new Pair(neighbor.edges, neighbor.weight));
@@ -75,5 +75,6 @@ public class Prims {
             }
         
         }
+        return minCost;
     }
 }
